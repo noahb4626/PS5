@@ -1,0 +1,13 @@
+Package: squaresPack
+Title: Integration by Trapezoidal & Simpson’s Method
+Version: 0.1
+Author: Noah Bardash <noah.bardash@wustl.edu>
+Description: Integration: Finding area under curve created by a set of points
+Depends:
+  R (>= 3.0.0)
+License: GPL (>= 2)
+Suggests:
+  devtools
+Collate:
+  ‘print.R’
+  ‘integrateIt.R’
