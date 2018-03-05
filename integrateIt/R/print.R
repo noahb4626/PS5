@@ -12,14 +12,13 @@
 #' @aliases print
 #' 
 #' @export
-setMethod(f = "print", definition = function(x){
+setMethod(f = "print", "Trapezoid", definition = function(x){
             return(x@integral)
           }
 )
 
 #' @export
-setMethod("print", "Simpson",
-          function(x){ 
+setMethod("print", "Simpson", definition = function(x){ 
             return(x@integral)
           }
 )

@@ -6,10 +6,10 @@
 \alias{print}
 \title{Print function}
 \usage{
-\S4method{print}{Trapezoid}(object)
+\S4method{print}{Trapezoid}(x)
 }
 \arguments{
-\item{object}{Object of class Trapezoid or Simpson}
+\item{x}{Object of class Trapezoid or Simpson}
 }
 \value{
 Area under the curve

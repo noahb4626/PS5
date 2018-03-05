@@ -1,17 +1,10 @@
 Package: integrateIt
-Title: Integration by Trapezoidal & Simpson’s Method
-Version: 0.1
-Author: Noah Bardash
-Maintainer: Noah Bardash <noah.bardash@wustl.edu>
-Description: Integration Finding area under curve created by a set of points
-Depends:
-  R (>= 3.0.0)
-License: GPL (>= 2)
-Suggests:
-  devtools
-Collate:
-  'print.R'
-  'integrateIt.R'
-  'Simpson.R'
-  'Trapezoid.R'
+Title: What the Package Does (one line, title case)
+Version: 0.0.0.9000
+Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
+Description: What the package does (one paragraph).
+Depends: R (>= 3.3.3)
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
 RoxygenNote: 6.0.1

@@ -7,15 +7,15 @@
 \alias{integrateIt,Simpson-method}
 \alias{print}
 \title{A Simpson class}
-\arguments{
-\item{xvals}{a numeric vector}
-
-\item{yvals}{a numeric vector, same dimensions as \code{xvals}}
-
-\item{integral}{area under curve using Simpson technique}
-}
 \description{
 Objects of class \code{Simpson} are created by \code{integrateIt}
+}
+\details{
+\itemize{
+\item \code{xvals} a numeric vector
+\item \code{yvals} a numeric vector, same dimensions as \code{xvals}
+\item \code{integral} area under curve using Trapezoid technique
+}
 }
 \seealso{
 \code{\link{integrateIt}}

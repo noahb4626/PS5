@@ -7,15 +7,15 @@
 \alias{integrateIt,Trapezoid-method}
 \alias{print}
 \title{A Trapezoid class}
-\arguments{
-\item{xvals}{a numeric vector}
-
-\item{yvals}{a numeric vector, same dimensions as \code{xvals}}
-
-\item{integral}{area under curve using Trapezoid technique}
-}
 \description{
 Objects of class \code{Trapezoid} are created by \code{integrateIt}
+}
+\details{
+\itemize{
+\item \code{xvals} a numeric vector
+\item \code{yvals} a numeric vector, same dimensions as \code{xvals}
+\item \code{integral} area under curve using Trapezoid technique
+}
 }
 \seealso{
 \code{\link{integrateIt}}

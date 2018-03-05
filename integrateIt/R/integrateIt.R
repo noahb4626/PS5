@@ -28,7 +28,7 @@ setGeneric(name = "integrateIt", def = function(xvals = "numeric", yvals = "nume
 })
 
 #' @export
-setMethod(f = "integrateIt", definition = function(xvals = "numeric", yvals = "numeric", a = "numeric", b = "numeric", rule = "String"){
+setMethod(f = "integrateIt", definition = function(xvals, yvals, a, b, rule){
     if(length(xvals) != length(yvals)) {return("Error, there must be the same number of x & y values.")}
     xvals <- xvals[a]:xvals[b]
     yvals <- yvals[a]:yvals[b]
@@ -38,13 +38,16 @@ setMethod(f = "integrateIt", definition = function(xvals = "numeric", yvals = "n
       # return an object of class Trapezoid
       # return values of x & y
       # return result
-      integral <- (h/22)*(2*sum(yvals) - yvals[1] - yvals[length(yvals)])
-      return(new("Trapezoid", xvals, yvals, integral))
+      integral <- (h/2)*(2*sum(yvals) - yvals[1] - yvals[length(yvals)])
+      return(new("Trapezoid", xvals=xvals, yvals=yvals, integral=integral))
     }
-    if(rule == "Simpson") {
+    else if(rule == "Simpson") {
       even_yvals <- yvals[c(FALSE,TRUE)]
       integral <- (h/3)*(2*sum(yvals) - yvals[1] - yvals[length(yvals)])
       integral <- integral + (h/3)*(2*sum(even_yvals))
-      return(new("Simpson", xvals, yvals, integral))
+      return(new("Simpson", xvals=xvals, yvals=yvals, integral=integral))
+    }
+    else {
+      print("not good")
     }
 })
