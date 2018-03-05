@@ -1,41 +1,38 @@
-#' A Simpson Object
+#' A Simpson class
 #' 
-#' Objects of class \code{Simpson} are created by the \code{integrateIt}
+#' Objects of class \code{Simpson} are created by \code{integrateIt}
 #'
-#' 
-#' An object of the class 'Simpson' has the following slots:
-#' \itemize{
-#' \item \code{xvals} a numeric vector
-#' \item \code{yvals} a numeric vector, same dimensions as \code{xvals}
-#' \item \code{area} a numeric 
-#' }
+#' @param xvals a numeric vector
+#' @param yvals a numeric vector, same dimensions as \code{xvals}
+#' @param integral area under curve using Simpson technique
 #'
 #' @author Noah Bardash: \email{noah.bardash@@wustl.edu}
-#' @aliases Simpson-class initialize,Simpson-method integrateIt,Simpson-method print,Simpson-method 
+#' @aliases Simpson-class initialize,Simpson-method integrateIt,Simpson-method print
 #' @rdname Simpson
+#' @seealso \code{\link{integrateIt}}
+#' 
 #' @export
 setClass(Class="Simpson", 
          representation = representation(
            xvals = "numeric",
            yvals = "numeric",
-           area = "numeric"
+           integral = "numeric"
          ),
          prototype = prototype(
            xvals = c(),
            yvals = c(),
-           area = c()
+           integral = c()
          )
 )
 
-# validity function ensures door values are between 1 & 3 (inclusive)
+#' @export
 setValidity("door", function(object){
-  if(object@chosenDoor < 1 | object@chosenDoor > 3){return("invalid chosen door")}
-  if(object@carDoor < 1 | object@carDoor > 3){return("invalid car door")}
+  if(length(yvals) %% 2 == 0){return("There must be an even number of subdivisions.")}
 }
 )
 
 #' @export
-setMethod("initialize", "Squares", 
+setMethod("initialize", "Simpson", 
           function(.Object, ...){
             value=callNextMethod()
             return(value)

@@ -1,25 +1,27 @@
-#' print method
-#' 
-#' Object of class \code{Simpson} or \code{Trapezoid} are created
-#' by the \code{integrateIt} and \code{print} functions
+#' Print function
 #'
+#' @param object Object of class Trapezoid or Simpson
+#'
+#' @return Area under the curve
 #' @author Noah Bardash: \email{noah.bardash@@wustl.edu}
-#' @aliases Simpson-class initialize,Simpson-method integrateIt,Simpson-method print,Simpson-method 
-#' @rdname Simpson
-#' @export
-
+#' @note Print area under the curve of a calculated integral
+#' @seealso \code{\link{Trapezoid}}
+#' @seealso \code{\link{Simpson}}
+#' 
 #' @rdname print
-
+#' @aliases print
+#' 
 #' @export
-setMethod("print", "Trap",
-          function(x){ 
-            return(x@integral)
+setMethod("print", "Trapezoid",
+          function(object){ 
+            return(object@integral)
           }
 )
 
 #' @export
 setMethod("print", "Simpson",
-          function(x){ 
-            return(x@integral)
+          function(object){ 
+            return(object@integral)
           }
 )
+
