@@ -1,6 +1,6 @@
 #' A Simpson Object
 #' 
-#' Object of class \code{Simpson} are created by the \code{integrateIt} and \code{print} functions
+#' Objects of class \code{Simpson} are created by the \code{integrateIt}
 #'
 #' 
 #' An object of the class 'Simpson' has the following slots:
@@ -27,6 +27,13 @@ setClass(Class="Simpson",
          )
 )
 
+# validity function ensures door values are between 1 & 3 (inclusive)
+setValidity("door", function(object){
+  if(object@chosenDoor < 1 | object@chosenDoor > 3){return("invalid chosen door")}
+  if(object@carDoor < 1 | object@carDoor > 3){return("invalid car door")}
+}
+)
+
 #' @export
 setMethod("initialize", "Squares", 
           function(.Object, ...){
@@ -34,21 +41,3 @@ setMethod("initialize", "Squares",
             return(value)
           }
 ) 
-
-#' @rdname Squares
-#' @export 
-setGeneric("getSquares",
-           function(object="Squares")  {
-             standardGeneric("getSquares")
-           }
-)
-
-#for classes: setclass, setvalidity, setmethod for simpson, trapezoid
-
-
-#' @export
-setMethod("getSquares", "Squares",
-          function(object){ 
-            return(object@square)
-          }
-)

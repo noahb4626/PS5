@@ -8,14 +8,14 @@ integrateIt <- function(xvals, yvals, a, b, rule) {
     # return an object of class Trapezoid
     # return values of x & y
     # return result
-    Trap <- (h/2)*(2*sum(yvals) - yvals[1] - yvals[length(yvals)])
-    return(c(Trap, xvals, yvals, rule))
+    integral <- (h/2)*(2*sum(yvals) - yvals[1] - yvals[length(yvals)])
+    return(c(integral, xvals, yvals, rule))
   }
   if(rule == "Simpson") {
     even_yvals <- yvals[c(TRUE,FALSE)]
-    Simpson <- (h/3)*(2*sum(yvals) - yvals[1] - yvals[length(yvals)])
-    Simpson <- Simpson + (h/3)*(2*sum(even_yvals))
-    return(c(Simpson, xvals, yvals, rule))
+    integral <- (h/3)*(2*sum(yvals) - yvals[1] - yvals[length(yvals)])
+    integral <- integral + (h/3)*(2*sum(even_yvals))
+    return(c(integral, xvals, yvals, rule))
   }
 }
 
