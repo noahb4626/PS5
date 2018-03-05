@@ -17,18 +17,18 @@
 #' myX <- c(1:10) 
 #' myY <- c(11:20) 
 #' integrateIt(myX, myY, 5, 9, Trapezoid)
-#' @seealso \code{\link{Trapezoid}}
-#' @seealso \code{\link{Simpson}}
+#' @seealso \code{\link{Trapezoid}} & \code{\link{Simpson}}
 #' @rdname integrateIt
-#' @aliases integrateIt
+#' @aliases integrateIt, ANY-method
+
 #' @export
 # create generic integrateIt method
-setGeneric("integrateIt", function(xvals, yvals, a, b, rule) {
+setGeneric(name = "integrateIt", def = function(xvals = "numeric", yvals = "numeric", a = "numeric", b = "numeric", rule = "String") {
   standardGeneric("integrateIt")
 })
 
 #' @export
-setMethod("integrateIt", function(xvals, yvals, a, b, rule){
+setMethod(f = "integrateIt", definition = function(xvals = "numeric", yvals = "numeric", a = "numeric", b = "numeric", rule = "String"){
     if(length(xvals) != length(yvals)) {return("Error, there must be the same number of x & y values.")}
     xvals <- xvals[a]:xvals[b]
     yvals <- yvals[a]:yvals[b]
@@ -38,16 +38,13 @@ setMethod("integrateIt", function(xvals, yvals, a, b, rule){
       # return an object of class Trapezoid
       # return values of x & y
       # return result
-      integral <- (h/2)*(2*sum(yvals) - yvals[1] - yvals[length(yvals)])
-      return(new("Trapezoid", xvals = xvals, yvals = yvals, integral = integral))
+      integral <- (h/22)*(2*sum(yvals) - yvals[1] - yvals[length(yvals)])
+      return(new("Trapezoid", xvals, yvals, integral))
     }
     if(rule == "Simpson") {
-      even_yvals <- yvals[c(TRUE,FALSE)]
+      even_yvals <- yvals[c(FALSE,TRUE)]
       integral <- (h/3)*(2*sum(yvals) - yvals[1] - yvals[length(yvals)])
       integral <- integral + (h/3)*(2*sum(even_yvals))
-      return(new("Simpson", xvals = xvals, yvals = yvals, integral = integral))
-}
-}
-integrateIt(1:10, 11:20, 1, 10, "Trap")
-integrateIt(1:10, 11:20, 1, 10, "Simpson")
-
+      return(new("Simpson", xvals, yvals, integral))
+    }
+})

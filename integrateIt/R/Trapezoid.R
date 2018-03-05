@@ -2,9 +2,11 @@
 #' 
 #' Objects of class \code{Trapezoid} are created by \code{integrateIt}
 #'
-#' @param xvals a numeric vector
-#' @param yvals a numeric vector, same dimensions as \code{xvals}
-#' @param integral area under curve using Trapezoid technique
+#' \itemize{
+#' \item \code{xvals} a numeric vector
+#' \item \code{yvals} a numeric vector, same dimensions as \code{xvals}
+#' \item \code{integral} area under curve using Trapezoid technique
+#' }
 #'
 #' @author Noah Bardash: \email{noah.bardash@@wustl.edu}
 #' @aliases Trapezoid-class initialize,Trapezoid-method integrateIt,Trapezoid-method print
@@ -26,8 +28,9 @@ setClass(Class="Trapezoid",
 )
 
 #' @export
-setValidity("door", function(object){
-  # fill in
+setValidity("Trapezoid", function(object){
+  if(length(object@xvals) != length(object@yvals)){return("There must be the same number of x & y values.")}
+  if(length(object@xvals) < 2 | length(object@yvals) < 2){return("There must be at least two points.")}
 }
 )
 

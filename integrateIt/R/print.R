@@ -1,6 +1,6 @@
 #' Print function
 #'
-#' @param object Object of class Trapezoid or Simpson
+#' @param x Object of class Trapezoid or Simpson
 #'
 #' @return Area under the curve
 #' @author Noah Bardash: \email{noah.bardash@@wustl.edu}
@@ -12,16 +12,15 @@
 #' @aliases print
 #' 
 #' @export
-setMethod("print", "Trapezoid",
-          function(object){ 
-            return(object@integral)
+setMethod(f = "print", definition = function(x){
+            return(x@integral)
           }
 )
 
 #' @export
 setMethod("print", "Simpson",
-          function(object){ 
-            return(object@integral)
+          function(x){ 
+            return(x@integral)
           }
 )
 
