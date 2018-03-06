@@ -1,6 +1,6 @@
 library(devtools)
 library(roxygen2)
-setwd("~/Documents/Github/PS5") # set working direction
+setwd("~/Documents/Github/PS5") # set working directory
 devtools::create("integrateIt") # implement devtools
 
 current.code <- as.package("integrateIt") # set integrateIt package as current code
