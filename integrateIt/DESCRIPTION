@@ -1,8 +1,8 @@
 Package: integrateIt
-Title: What the Package Does (one line, title case)
+Title: Integration by Simpson or Trapezoid Method
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Authors@R: person(“Noah”, “Bardash”, email = “noah.bardash@wustl.edu”, role = c("aut", "cre"))
+Description: Given a set of points equally spaced in the x-direction, calculate the area under a curve drawn connecting these points.
 Depends: R (>= 3.3.3)
 License: What license is it under?
 Encoding: UTF-8

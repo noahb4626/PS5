@@ -11,12 +11,15 @@
 #' @rdname print
 #' @aliases print
 #' 
+
+# create print method for Trapezoid class
 #' @export
 setMethod(f = "print", "Trapezoid", definition = function(x){
             return(x@integral)
           }
 )
 
+# create print method for Simpson class
 #' @export
 setMethod("print", "Simpson", definition = function(x){ 
             return(x@integral)
