@@ -6,11 +6,12 @@ devtools::create("integrateIt") # implement devtools
 current.code <- as.package("integrateIt") # set integrateIt package as current code
 load_all(current.code) # load integrateIt package
 document(current.code) # create documentation
+check(current.code) # build R package
 
 # integrate from 1-10 incremented by 1 (9 subdivisions) with Trapezoid method
 test1 <- integrateIt(1:10, 11:20, 1, 10, "Trap")
 test1 # object of class Trapezoid
-
+print(test1)
 # integrate from 1-11 incremented by 1 (10 subdivisions) with Simpson method
 test2 <- integrateIt(1:11, 11:21, 1, 11, "Simpson")
 test2 # object of class Simpson
